@@ -227,6 +227,10 @@ public class UnityRunner {
     private void clearBefore() {
         File outputDir = new File(configuration.buildPath);
 
+        if (outputDir.isFile()) {
+            outputDir = outputDir.getParentFile();
+        }
+
         try {
             if (outputDir.exists()) {
                 logMessage("Removing output directory: " + outputDir.getPath());

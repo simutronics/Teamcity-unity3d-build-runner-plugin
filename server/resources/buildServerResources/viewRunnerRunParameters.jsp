@@ -3,6 +3,10 @@
 <jsp:useBean id="propertiesBean" scope="request" type="jetbrains.buildServer.controllers.BasePropertiesBean"/>
 
 <div class="parameter">
+  Line List Path: <strong><props:displayValue name="argument.unity_install_path" /></strong>
+</div>
+
+<div class="parameter">
   <c:choose>
     <c:when test="${not empty propertiesBean.properties['teamcity.build.workingDir']}">
       Working Directory: <strong><props:displayValue name="teamcity.build.workingDir" /></strong>

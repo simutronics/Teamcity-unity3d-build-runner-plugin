@@ -7,6 +7,19 @@
 
 <tr>
     <th>
+        <label for="argument.unity_install_path">Unity Install Path: </label>
+    </th>
+    <td>
+        <props:textProperty name="argument.unity_install_path" style="width:32em;"/>
+        <span class="error" id="error_argument.unity_install_path"></span>
+        <span class="smallNote">
+             Specifies the install path to the Unity Editor.
+        </span>
+    </td>
+</tr>
+
+<tr>
+    <th>
         <label for="teamcity.build.workingDir">Working Directory: </label>
     </th>
     <td>

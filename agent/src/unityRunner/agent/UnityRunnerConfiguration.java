@@ -37,6 +37,7 @@ public class UnityRunnerConfiguration {
     final String extraOpts;
 
     final Platform platform;
+    final String configuredUnityPath;
     final java.io.File cleanedLogPath;
 
     final boolean ignoreLogBefore;
@@ -57,6 +58,7 @@ public class UnityRunnerConfiguration {
         } else {
             platform = UnityRunnerConfiguration.Platform.Mac;
         }
+        configuredUnityPath = Parameters.getString(runnerParameters, PluginConstants.PROPERTY_UNITY_INSTALL_PATH);
         quit = Parameters.getBoolean(runnerParameters, PluginConstants.PROPERTY_QUIT);
         batchMode = Parameters.getBoolean(runnerParameters, PluginConstants.PROPERTY_BATCH_MODE);
         noGraphics = Parameters.getBoolean(runnerParameters, PluginConstants.PROPERTY_NO_GRAPHICS);
@@ -85,7 +87,8 @@ public class UnityRunnerConfiguration {
     }
 
     String getUnityPath() {
-        return getUnityPath(platform);
+        /* return getUnityPath(platform); */
+        return configuredUnityPath;
     }
 
     String getUnityLogPath() {
