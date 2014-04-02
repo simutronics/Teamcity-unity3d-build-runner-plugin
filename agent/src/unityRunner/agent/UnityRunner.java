@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  * Created by IntelliJ IDEA.
@@ -71,7 +72,11 @@ public class UnityRunner {
             args.add(configuration.getCleanedLogPath());
         }
 
-        args.add(configuration.extraOpts);
+        //args.add(configuration.extraOpts);
+        StringTokenizer st = new StringTokenizer(configuration.extraOpts);
+        while(st.hasMoreTokens()) {
+            args.add(st.nextToken());
+        }
 
         return args;
     }
